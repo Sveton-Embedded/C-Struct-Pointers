@@ -35,7 +35,7 @@ void updateMotor(struct Motor *m)
     m->voltage += 10.0f;
     m->current += 3.0f;
     m->temperature -= 15.0f;
-    m->motorStatus == true;
+    m->motorStatus = true;
 
 }
 
