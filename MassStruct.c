@@ -13,13 +13,13 @@ struct Motor
 };
 
 
-void printMotor(struct Motor m)
+void printMotor(struct Motor *m)
 {
-    printf("Name        : %s\n", m.name);
-    printf("Voltage     : %.1f V\n", m.voltage);
-    printf("Current     : %.1f A\n", m.current);
-    printf("Temperature : %.1f C\n", m.temperature);
-    if(m.motorStatus)
+    printf("Name        : %s\n", m->name);
+    printf("Voltage     : %.1f V\n", m->voltage);
+    printf("Current     : %.1f A\n", m->current);
+    printf("Temperature : %.1f C\n", m->temperature);
+    if(m->motorStatus)
     {
         printf("Motor Status: ON\n");
     }
@@ -58,7 +58,7 @@ int main(void)
     
     for (int i = 0; i < MOTOR_COUNT ; i++)
     {
-        printMotor(motors[i]);
+        printMotor(&motors[i]);
     }
 
     return 0;
