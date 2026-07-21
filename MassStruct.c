@@ -30,10 +30,12 @@ void printMotor(struct Motor *m)
     printf("---------------------\n"); 
 }
 
+
 int main(void)
 {
     
     struct Motor motors[3];
+    struct Motor *selectedMotor = &motors[1];
 
     strcpy(motors[0].name, "Siemens24");
     motors[0].voltage = 400.0f;
@@ -55,6 +57,8 @@ int main(void)
     motors[2].temperature = 42.1f;
     motors[2].motorStatus = true;
 
+    selectedMotor->temperature = 100.0f;
+    selectedMotor->motorStatus = false;
     
     for (int i = 0; i < MOTOR_COUNT ; i++)
     {
