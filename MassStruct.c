@@ -3,17 +3,21 @@
 #include <string.h>
 #define MOTOR_COUNT 3
 
-struct Motor
+typedef float Voltage;
+typedef float Current;
+typedef float Temperature;
+
+typedef struct
 {
     char name[20];
-    float voltage;
-    float current;
-    float temperature;
+    Voltage voltage;
+    Current current;
+    Temperature temperature;
     bool motorStatus;
-};
+}Motor;
 
 
-void printMotor(struct Motor *m)
+void printMotor(Motor *m)
 {
     printf("Name        : %s\n", m->name);
     printf("Voltage     : %.1f V\n", m->voltage);
@@ -33,7 +37,7 @@ void printMotor(struct Motor *m)
 int main(void)
 {
     
-    struct Motor motors[3];
+    Motor motors[3];
 
     strcpy(motors[0].name, "Siemens24");
     motors[0].voltage = 400.0f;
