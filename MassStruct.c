@@ -3,12 +3,16 @@
 #include <string.h>
 #define MOTOR_COUNT 3
 
+typedef float Voltage;
+typedef float Current;
+typedef float Temperature;
+
 typedef struct
 {
     char name[20];
-    float voltage;
-    float current;
-    float temperature;
+    Voltage voltage;
+    Current current;
+    Temperature temperature;
     bool motorStatus;
 }Motor;
 
